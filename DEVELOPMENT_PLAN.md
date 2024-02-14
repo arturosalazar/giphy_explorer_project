@@ -11,7 +11,7 @@
         ~~Create an Create an <img> element.~~
         ~~Set the src attribute of your <img> element to display the GIF.~~
         ~~Append <img> element to the body of the HTML page.~~
-        Add catch to catch errors that might occur from fetch and handling
+        ~~Add catch to catch errors that might occur from fetch and handling~~
 
 ### Step 2: Add a Button to Load Another Random GIF
 
