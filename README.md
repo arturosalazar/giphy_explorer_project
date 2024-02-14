@@ -49,6 +49,10 @@ For a more comprehensive look at the planned phases of development and the techn
 
 This section will detail the steps necessary to run the Giphy Explorer project locally. It will include instructions on setting up the development environment, cloning the repository, and starting the application.
 
+### Setup API Key
+
+Copy `keys.js.template` to `keys.js` and replace `YOUR_API_KEY` with your actual Giphy API key.
+
 This section will be completed later.
 
 ## Dependencies
