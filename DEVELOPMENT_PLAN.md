@@ -5,9 +5,13 @@
     Goal: Fetch and display a random GIF using the Giphy API.
     Key Concepts: fetch() for API calls, handling Promises, DOM manipulation to insert the GIF into the page.
     Implementation:
-        Set up a basic HTML page with a <div> or <img> element to display the GIF.
+        Set up a basic HTML page
         Use fetch() to make a GET request to the Giphy API's random endpoint.
-        Extract the GIF URL from the API response and update the src attribute of your <img> element to display the GIF.
+        Extract the GIF URL from the API response.
+        Create an Create an <img> element.
+        Set the src attribute of your <img> element to display the GIF.
+        Append <img> element to the body of the HTML page.
+
 
 ### Step 2: Add a Button to Load Another Random GIF
 
