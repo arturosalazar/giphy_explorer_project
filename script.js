@@ -11,3 +11,6 @@ fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=cats&rating=g
     gifImageElement.setAttribute("src", gifURL);
     document.body.appendChild(gifImageElement);
 })
+.catch(function(error){
+    console.log("Error Detected: ", error);
+})
