@@ -18,7 +18,7 @@
     Goal: Allow the user to fetch a new random GIF without reloading the page.
     Key Concepts: Event listeners, asynchronous event handling.
     Implementation:
-        Add a button to your HTML.
+        ~~Add a button to your HTML.~~
         Attach an event listener to the button that calls the function to fetch and display a new GIF when clicked.
 
 ### Step 3: Enable Searching for GIFs
