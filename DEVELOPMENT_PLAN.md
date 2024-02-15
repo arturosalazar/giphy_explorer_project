@@ -20,6 +20,7 @@
     Implementation:
         ~~Add a button to your HTML.~~
         Attach an event listener to the button that calls the function to fetch and display a new GIF when clicked.
+        Ensure event listener function will only create one image. Further clicks should simply update image
 
 ### Step 3: Enable Searching for GIFs
 
