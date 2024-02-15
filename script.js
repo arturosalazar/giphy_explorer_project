@@ -29,3 +29,6 @@ function createNewGif(){
 // Create new gif when button is pressed
 const button = document.getElementById("new-gif")
 button.addEventListener('click', createNewGif);
+
+// Create new gif when page has been loaded
+window.onload = createNewGif;
