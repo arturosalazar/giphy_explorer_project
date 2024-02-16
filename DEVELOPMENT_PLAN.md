@@ -32,7 +32,8 @@
         ~~Display random result from the search response.~~
         ~~Add HTML header to display current search term~~
         ~~Display current search term at top~~
-        Remove input to search field and refocus on field after user input
+        ~~Remove input to search field and refocus on field after user input~~
+        Move new gif button down to submit button (quality of life update)
 
 ### Step 4: Allow Users to Specify the Number of GIFs
 
