@@ -1,8 +1,15 @@
 import {API_KEY} from './keys.js';
 
+const defaultSearchTag = 'cats';
+let searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${defaultSearchTag}&rating=g`;
+
+function updateSearchTag(newTag){
+    searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${newTag}&rating=g`;
+}
+
 // Fetch and display a random GIF using the Giphy API
 function createNewGif(){
-    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=cats&rating=g`)
+    fetch(searchURL)
     .then(function(response){
         return response.json();
     })
@@ -48,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         
         // Get value of the search-term input 
         const searchTerm = document.getElementById("search-term").value;
-        console.log(parseInputForSearch(searchTerm));
+        updateSearchTag(parseInputForSearch(searchTerm));
+        createNewGif();
     });
 });
 
