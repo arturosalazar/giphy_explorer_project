@@ -1,10 +1,12 @@
 import {API_KEY} from './keys.js';
 
-const defaultSearchTag = 'cats';
-let searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${defaultSearchTag}&rating=g`;
+let searchTag = 'cats'; //Used in actual API Query (formatted)
+let displaySearchTerm = 'cats'; //Displayed to screen as it was input (unformatted)
+let searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTag}&rating=g`;
 
 function updateSearchTag(newTag){
-    searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${newTag}&rating=g`;
+    searchTag = newTag;
+    searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTag}&rating=g`;
 }
 
 // Fetch and display a random GIF using the Giphy API
@@ -26,6 +28,8 @@ function createNewGif(){
         } else {
             gifImageElement.setAttribute("src", gifURL);
         }
+
+        document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${unformattedSearchTerm}`;
         
     })
     .catch(function(error){
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         
         // Get value of the search-term input 
         const searchTerm = document.getElementById("search-term").value;
+        displaySearchTerm = searchTerm;
         updateSearchTag(parseInputForSearch(searchTerm));
         createNewGif();
     });
