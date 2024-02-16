@@ -33,7 +33,7 @@
         ~~Add HTML header to display current search term~~
         ~~Display current search term at top~~
         ~~Remove input to search field and refocus on field after user input~~
-        Move new gif button down to submit button (quality of life update)
+        ~~Move new gif button down to submit button (quality of life update)~~
 
 ### Step 4: Allow Users to Specify the Number of GIFs
 
@@ -51,6 +51,7 @@
     Implementation:
         Integrate Bootstrap into your project.
         Use Bootstrap's grid system to create a responsive layout for displaying GIFs.
+        Update styling on new-gif button so that it appears next to Submit button
         Utilize Bootstrap components for the input field, button, and other UI elements to improve aesthetics and usability.
 
 ### Step 6: Advanced Features and Polish
