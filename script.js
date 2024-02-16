@@ -26,7 +26,17 @@ function createNewGif(){
     })
 }
 
+//parse input so it can be used as part of an API request
+function parseInputForSearch(searchTerm){
+    //Remove whitespace before/after
+    const trimmed = searchTerm.trim();
 
+    //Replace any whitespace between words with '+'
+    const formatted = trimmed.replace(/\s+/g, '+');
+
+    //Return the output
+    return formatted;
+}
 
 // Capture user search term from search-form form
 document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code runs AFTER HTML document has been fully loaded so all elements accessible
@@ -38,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         
         // Get value of the search-term input 
         const searchTerm = document.getElementById("search-term").value;
-        console.log(searchTerm);
+        console.log(parseInputForSearch(searchTerm));
     });
 });
 
