@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         updateSearchTag(parseInputForSearch(searchTerm));
         createNewGif();
 
-        // Clear out input field an refocus for user to input again 
+        // Clear out input field and refocus for user to input again 
         searchTermElement.value = '';
         searchTermElement.focus();
     });
