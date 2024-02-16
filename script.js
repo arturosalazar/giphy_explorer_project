@@ -29,7 +29,7 @@ function createNewGif(){
             gifImageElement.setAttribute("src", gifURL);
         }
 
-        document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${unformattedSearchTerm}`;
+        document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
         
     })
     .catch(function(error){
@@ -57,11 +57,16 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         
         event.preventDefault(); // Prevent form from submitting default way
         
-        // Get value of the search-term input 
-        const searchTerm = document.getElementById("search-term").value;
+        // Get value of the search-term input
+        const searchTermElement = document.getElementById("search-term");
+        const searchTerm = searchTermElement.value;
         displaySearchTerm = searchTerm;
         updateSearchTag(parseInputForSearch(searchTerm));
         createNewGif();
+
+        // Clear out input field an refocus for user to input again 
+        searchTermElement.value = '';
+        searchTermElement.focus();
     });
 });
 
