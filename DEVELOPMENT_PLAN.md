@@ -28,8 +28,10 @@
     Key Concepts: Forms and input handling, modifying API requests based on user input.
     Implementation:
         ~~Add a text input field and a search button to your HTML.~~
-        Modify your fetch function to use the Giphy search endpoint, incorporating the user's search term from the input field.
-        Display the first result or a random result from the search response.
+        ~~Modify your fetch function to use the Giphy search endpoint, incorporating the user's search term from the input field.~~
+        ~~Display random result from the search response.~~
+        Add HTML header to display current search term
+        Display current search term at top
 
 ### Step 4: Allow Users to Specify the Number of GIFs
 
