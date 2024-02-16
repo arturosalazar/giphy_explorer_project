@@ -26,8 +26,25 @@ function createNewGif(){
     })
 }
 
-// Create new gif when button is pressed
-const button = document.getElementById("new-gif")
+
+
+// Capture user search term from search-form form
+document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code runs AFTER HTML document has been fully loaded so all elements accessible
+    const searchForm = document.getElementById("search-form");
+    
+    searchForm.addEventListener("submit", function(event){
+        
+        event.preventDefault(); // Prevent form from submitting default way
+        
+        // Get value of the search-term input 
+        const searchTerm = document.getElementById("search-term").value;
+        console.log(searchTerm);
+    });
+});
+
+
+// Create new gif when new gif button is pressed
+const button = document.getElementById("new-gif");
 button.addEventListener('click', createNewGif);
 
 // Create new gif when page has been loaded
