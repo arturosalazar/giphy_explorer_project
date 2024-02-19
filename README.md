@@ -37,10 +37,6 @@ Through the development of the Giphy Explorer, I aim to solidify my understandin
 
     Utilize Bootstrap for a responsive, grid-based layout and improved UI components.
 
-### Phase 6: Advanced Features
-
-    Explore adding functionalities like saving favorites or sharing GIFs.
-
 ## Detailed Development Plan
 
 For a more comprehensive look at the planned phases of development and the technical details, please see our [Detailed Development Plan](./DEVELOPMENT_PLAN.md).
