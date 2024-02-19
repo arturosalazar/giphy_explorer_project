@@ -42,16 +42,21 @@ async function displayGifs(){
         gifContainer.removeChild(gifContainer.firstChild);
     }
 
-    // Await the response of the gifAPICall function
-    const gifURL = await gifApiCall();
-    
-    //Create a new element and set it's attributes
-    let gifImageElement = document.createElement("img");
-    gifImageElement.id = "gif-element";
-    gifImageElement.setAttribute("src", gifURL);
+    // Create generate requested number of gifs and display to screen
+    for(let i = 0; i < numOfGifs; i++){
+        // Await the response of the gifAPICall function
+        const gifURL = await gifApiCall();
+        
+        //Create a new element and set it's attributes
+        let gifImageElement = document.createElement("img");
+        gifImageElement.id = "gif-element";
+        gifImageElement.setAttribute("src", gifURL);
 
-    //Display gif element and update search term
-    document.getElementById("gif-container").appendChild(gifImageElement);
+        //Display gif element 
+        document.getElementById("gif-container").appendChild(gifImageElement);
+    }
+
+    //Update search values
     document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
     document.getElementById("current-num-of-gifs").innerHTML = `Current Number of Gifs to Search: ${numOfGifs}`;
 }
