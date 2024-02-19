@@ -43,6 +43,7 @@
         ~Add a numeric input field for the user to specify the number of GIFs.~
         ~Refactor createNewGif function to empty gif container before adding new gif (will be needed so that can add any number of gifs later)~
         ~Separate API request from display function (needed to be able to display one or more gifs as needed)~
+        ~Change createNewGifs to displayGifs to better represent functionality~
         Adjust your API request to fetch the specified number of GIFs.
         Iterate over the GIFs in the response and display each in the page, ensuring your layout can dynamically adjust to the number of GIFs.
 
