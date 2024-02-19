@@ -22,7 +22,7 @@ async function gifApiCall(){
     try {
         const response = await fetch(searchURL); // Await the response of the fetch call
         const respData = await response.json(); // Parse JSON response
-        let gifURL = respData.data.images.original.url;
+        let gifURL = respData.data.images.fixed_height.url;
         return gifURL; // Waits for the fetch to complete before returning the GIF URL
     } catch (error){
         console.error("Error Detected: ", error); // Log any errors that occur during the fetch operation
