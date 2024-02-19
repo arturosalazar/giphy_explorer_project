@@ -45,8 +45,8 @@
         ~Separate API request from display function (needed to be able to display one or more gifs as needed)~
         ~Change createNewGifs to displayGifs to better represent functionality~
         ~Update API Request to select a fixed height for each gif~
-        Adjust your display function to request to fetch the specified number of GIFs.
-        Iterate over the GIFs in the response and display each in the page, ensuring your layout can dynamically adjust to the number of GIFs.
+        Adjust display function to request specified number of GIFs and append to screen
+        Remove code that clear out input field and refocus for user to input again when user submits (caused issues if user just changing number of gifs)
 
 ### Step 5: Improve the Layout and Style
 
@@ -55,6 +55,7 @@
     Implementation:
         Integrate Bootstrap into your project.
         Use Bootstrap's grid system to create a responsive layout for displaying GIFs.
+        Ensuring your layout can dynamically adjust to the number of GIFs
         Update styling on new-gif button so that it appears next to Submit button
         Utilize Bootstrap components for the input field, button, and other UI elements to improve aesthetics and usability.
 
