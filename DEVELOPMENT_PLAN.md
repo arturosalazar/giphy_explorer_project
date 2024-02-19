@@ -45,7 +45,7 @@
         ~Separate API request from display function (needed to be able to display one or more gifs as needed)~
         ~Change createNewGifs to displayGifs to better represent functionality~
         ~Update API Request to select a fixed height for each gif~
-        Adjust display function to request specified number of GIFs and append to screen
+        ~Adjust display function to request specified number of GIFs and append to screen~
         Remove code that clear out input field and refocus for user to input again when user submits (caused issues if user just changing number of gifs)
 
 ### Step 5: Improve the Layout and Style
