@@ -59,15 +59,6 @@
         Update styling on new-gif button so that it appears next to Submit button
         Utilize Bootstrap components for the input field, button, and other UI elements to improve aesthetics and usability.
 
-### Step 6: Advanced Features and Polish
-
-    Goal: Add additional functionality like saving favorite GIFs, sharing GIFs, or user authentication for personalized experiences.
-    Key Concepts: Advanced API usage, possibly backend development, local storage.
-    Implementation: Depending on the feature, you may need to:
-        Implement local storage to save user favorites.
-        Explore backend development to support features like user accounts or sharing.
-        Refine the UI/UX based on user feedback or personal critique.
-
 ## Learning Resources:
 
     [Official Giphy API documentation for understanding endpoints and parameters.](https://developers.giphy.com/docs/api)
