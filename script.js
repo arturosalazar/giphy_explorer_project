@@ -95,10 +95,6 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         numOfGifs = number;
 
         displayGifs();
-
-        // Clear out input field and refocus for user to input again 
-        searchTermElement.value = '';
-        searchTermElement.focus();
     });
 });
 
