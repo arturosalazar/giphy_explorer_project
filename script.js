@@ -9,33 +9,52 @@ function updateSearchTag(newTag){
     searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTag}&rating=g`;
 }
 
-// Fetch and display a random GIF using the Giphy API
-function createNewGifs(){
-    fetch(searchURL)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(respData){
+/**
+ * Initiates an asynchronous API call to fetch a GIF URL. It uses async/await syntax 
+ * to ensure the function returns a promise, which resolves to the URL string 
+ * after the API call completes.
+ *
+ * @returns {Promise<string>} A promise that resolves to the URL string of the fetched GIF.
+ * If an error occurs during the fetch operation, the function logs the error and 
+ * may implicitly return 'undefined'.
+ */
+async function gifApiCall(){
+    try {
+        const response = await fetch(searchURL); // Await the response of the fetch call
+        const respData = await response.json(); // Parse JSON response
         let gifURL = respData.data.images.original.url;
-
-        //Empty gif-container so it can be filled with one or more new gifs
-        //Helps remove old gifs instead of continually repeating
-        const gifContainer = document.getElementById("gif-container");
-        while (gifContainer.firstChild){
-            gifContainer.removeChild(gifContainer.firstChild);
-        }
-        let gifImageElement = document.createElement("img");
-        gifImageElement.id = "gif-element";
-        gifImageElement.setAttribute("src", gifURL);
-        document.getElementById("gif-container").appendChild(gifImageElement);
-        
-        document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
-        
-    })
-    .catch(function(error){
-        console.log("Error Detected: ", error);
-    })
+        return gifURL; // Waits for the fetch to complete before returning the GIF URL
+    } catch (error){
+        console.error("Error Detected: ", error); // Log any errors that occur during the fetch operation
+    }
 }
+
+/**
+ * Asynchronously fetch random GIF using Giphy API
+ * Clears existing gif content
+ * Updates screen to display newewst GIFs and current search tag
+ */
+async function displayGifs(){
+    // Ensure the 'gif-container' is ready for new content by removing previous GIFs
+    const gifContainer = document.getElementById("gif-container");
+    while (gifContainer.firstChild){
+        gifContainer.removeChild(gifContainer.firstChild);
+    }
+
+    // Await the response of the gifAPICall function
+    const gifURL = await gifApiCall();
+    
+    //Create a new element and set it's attributes
+    let gifImageElement = document.createElement("img");
+    gifImageElement.id = "gif-element";
+    gifImageElement.setAttribute("src", gifURL);
+
+    //Display gif element and update search term
+    document.getElementById("gif-container").appendChild(gifImageElement);
+    document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
+}
+
+
 
 //parse input so it can be used as part of an API request
 function parseInputForSearch(searchTerm){
@@ -62,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         const searchTerm = searchTermElement.value;
         displaySearchTerm = searchTerm;
         updateSearchTag(parseInputForSearch(searchTerm));
-        createNewGifs();
+        displayGifs();
 
         // Clear out input field and refocus for user to input again 
         searchTermElement.value = '';
@@ -73,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
 
 // Create new gif when new gif button is pressed
 const button = document.getElementById("new-gif");
-button.addEventListener('click', createNewGifs);
+button.addEventListener('click', displayGifs);
 
 // Create new gif when page has been loaded
-window.onload = createNewGifs;
+window.onload = displayGifs;
