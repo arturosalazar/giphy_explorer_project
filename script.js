@@ -10,7 +10,7 @@ function updateSearchTag(newTag){
 }
 
 // Fetch and display a random GIF using the Giphy API
-function createNewGif(){
+function createNewGifs(){
     fetch(searchURL)
     .then(function(response){
         return response.json();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         const searchTerm = searchTermElement.value;
         displaySearchTerm = searchTerm;
         updateSearchTag(parseInputForSearch(searchTerm));
-        createNewGif();
+        createNewGifs();
 
         // Clear out input field and refocus for user to input again 
         searchTermElement.value = '';
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
 
 // Create new gif when new gif button is pressed
 const button = document.getElementById("new-gif");
-button.addEventListener('click', createNewGif);
+button.addEventListener('click', createNewGifs);
 
 // Create new gif when page has been loaded
-window.onload = createNewGif;
+window.onload = createNewGifs;
