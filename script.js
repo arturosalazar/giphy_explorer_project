@@ -3,6 +3,7 @@ import {API_KEY} from './keys.js';
 let searchTag = 'cats'; //Used in actual API Query (formatted)
 let displaySearchTerm = 'cats'; //Displayed to screen as it was input (unformatted)
 let searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTag}&rating=g`;
+let numOfGifs = 1;
 
 function updateSearchTag(newTag){
     searchTag = newTag;
@@ -52,6 +53,7 @@ async function displayGifs(){
     //Display gif element and update search term
     document.getElementById("gif-container").appendChild(gifImageElement);
     document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
+    document.getElementById("current-num-of-gifs").innerHTML = `Current Number of Gifs to Search: ${numOfGifs}`;
 }
 
 
@@ -81,6 +83,12 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         const searchTerm = searchTermElement.value;
         displaySearchTerm = searchTerm;
         updateSearchTag(parseInputForSearch(searchTerm));
+
+        // Get value of number of gifs to display
+        const numGifsElement = document.getElementById("number-of-gifs");
+        const number = numGifsElement.value;
+        numOfGifs = number;
+
         displayGifs();
 
         // Clear out input field and refocus for user to input again 
