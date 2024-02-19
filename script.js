@@ -18,17 +18,17 @@ function createNewGif(){
     .then(function(respData){
         let gifURL = respData.data.images.original.url;
 
-        // Create one image on screen. If image already exists, update
-        let gifImageElement = document.getElementById("gif-element");
-        if (!gifImageElement){
-            let gifImageElement = document.createElement("img");
-            gifImageElement.id = "gif-element";
-            gifImageElement.setAttribute("src", gifURL);
-            document.getElementById("gif-container").appendChild(gifImageElement);
-        } else {
-            gifImageElement.setAttribute("src", gifURL);
+        //Empty gif-container so it can be filled with one or more new gifs
+        //Helps remove old gifs instead of continually repeating
+        const gifContainer = document.getElementById("gif-container");
+        while (gifContainer.firstChild){
+            gifContainer.removeChild(gifContainer.firstChild);
         }
-
+        let gifImageElement = document.createElement("img");
+        gifImageElement.id = "gif-element";
+        gifImageElement.setAttribute("src", gifURL);
+        document.getElementById("gif-container").appendChild(gifImageElement);
+        
         document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
         
     })
