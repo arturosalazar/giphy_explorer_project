@@ -1,7 +1,7 @@
 import {API_KEY} from './keys.js';
 
 let searchTag = 'cats'; //Used in actual API Query (formatted)
-let displaySearchTerm = 'cats'; //Displayed to screen as it was input (unformatted)
+let displaySearchTerm = 'Cats'; //Displayed to screen as it was input (unformatted)
 let searchURL = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTag}&rating=g`;
 let numOfGifs = 1;
 
@@ -42,8 +42,20 @@ async function displayGifs(){
         gifContainer.removeChild(gifContainer.firstChild);
     }
 
-    // Create generate requested number of gifs and display to screen
-    for(let i = 0; i < numOfGifs; i++){
+    // Generate one gif to go into gif-container
+    // Await the response of the gifAPICall function
+    const gifURL = await gifApiCall();
+        
+    //Create a new element and set it's attributes
+    let gifImageElement = document.createElement("img");
+    gifImageElement.id = "gif-element";
+    gifImageElement.setAttribute("src", gifURL);
+
+    //Display gif element 
+    document.getElementById("gif-container").appendChild(gifImageElement);
+
+    // Create generate any extra gifs and display to gif-container-overflow
+    for(let i = 1; i < numOfGifs; i++){
         // Await the response of the gifAPICall function
         const gifURL = await gifApiCall();
         
@@ -53,7 +65,7 @@ async function displayGifs(){
         gifImageElement.setAttribute("src", gifURL);
 
         //Display gif element 
-        document.getElementById("gif-container").appendChild(gifImageElement);
+        document.getElementById("gif-container-overflow").appendChild(gifImageElement);
     }
 
     //Update search values
@@ -86,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function(){  // Ensure JS code run
         // Get value of the search-term input
         const searchTermElement = document.getElementById("search-term");
         const searchTerm = searchTermElement.value;
-        displaySearchTerm = searchTerm;
+        displaySearchTerm = searchTerm.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
         updateSearchTag(parseInputForSearch(searchTerm));
 
         // Get value of number of gifs to display
