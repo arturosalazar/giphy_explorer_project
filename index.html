@@ -22,22 +22,25 @@
             <button class="btn btn-primary col-6 mb-4" type="button" id="new-gif">New Gif!</button> 
         </div>
 
-        <div class="d-flex justify-content-center">
-            <div id="gif-container"></div>    
-        </div>
         
-        <h2 id="current-search-tag"></h2>
-        <h3 id="current-num-of-gifs"></h2>
+        <h2>Current Search Term: <span id="current-search-tag"></span></h2>
+        <h2>Current Number of Gifs to Search <span id="current-num-of-gifs"></span></h2>
         
         <div class="row">
-            <form id="search-form">
+            <form id="search-form" class="col-xs-12 col-md-6 col-md-offset-2">
                 <label class="form-label mt-4" for="search-term">Search Term: </label>
                 <input class="form-control" type="text" id="search-term" name="search-term" value="Cat">
                 <label class="form-label mt-4" for="number-of-gifs">Number of Gifs:</label>
                 <input class="form-control" type="number" id="number-of-gifs" name="number-of-gifs" min="1" max="20" value="1">
                 <input class="btn btn-secondary mt-4" type="submit" value="Submit">
             </form>
+            <div id="gif-container" class="col-xs-12 col-md-6 col-md-offset-2 d-flex justify-content-center"></div>    
         </div>
+
+        <div class="d-flex justify-content-center m-4">
+            <div id="gif-container-overflow"></div>    
+        </div>
+
     </div>
     
     
