@@ -69,6 +69,7 @@ async function displayGifs(){
         let gifImageElement = document.createElement("img");
         gifImageElement.id = "gif-element";
         gifImageElement.setAttribute("src", gifURL);
+        gifImageElement.setAttribute("class", "m-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 ");
 
         //Display gif element 
         document.getElementById("gif-container-overflow").appendChild(gifImageElement);
