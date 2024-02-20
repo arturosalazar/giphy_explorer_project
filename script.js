@@ -42,6 +42,12 @@ async function displayGifs(){
         gifContainer.removeChild(gifContainer.firstChild);
     }
 
+    // Ensure the 'gif-container-overflow' is ready for new content by removing previous GIFs
+    const gifContainerOverflow = document.getElementById("gif-container-overflow");
+    while (gifContainerOverflow.firstChild){
+        gifContainerOverflow.removeChild(gifContainerOverflow.firstChild);
+    }
+
     // Generate one gif to go into gif-container
     // Await the response of the gifAPICall function
     const gifURL = await gifApiCall();
