@@ -53,11 +53,13 @@
     Goal: Enhance the visual presentation using Bootstrap.
     Key Concepts: Responsive design, using a CSS framework.
     Implementation:
-        Integrate Bootstrap into your project.
-        Use Bootstrap's grid system to create a responsive layout for displaying GIFs.
-        Ensuring your layout can dynamically adjust to the number of GIFs
-        Update styling on new-gif button so that it appears next to Submit button
-        Utilize Bootstrap components for the input field, button, and other UI elements to improve aesthetics and usability.
+        Add Bootstrap to project (Bootswatch.com - Yeti styling)
+        Use Bootstrap to style title
+        Use Bootrap to style New Gif button
+        Use Bootstrap to style form to input search term and number of gifs
+        Use Bootstrap to style to Current Search Term and Current Number of Gifs
+        Update JS so that current search term and number of gifs only return actual items. HTML/Bootstrap will handle appearance
+        Review and change any items as needed
 
 ## Learning Resources:
 
