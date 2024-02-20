@@ -57,8 +57,8 @@ async function displayGifs(){
     }
 
     //Update search values
-    document.getElementById("current-search-tag").innerHTML = `Current Search Term: ${displaySearchTerm}`;
-    document.getElementById("current-num-of-gifs").innerHTML = `Current Number of Gifs to Search: ${numOfGifs}`;
+    document.getElementById("current-search-tag").innerHTML = `${displaySearchTerm}`;
+    document.getElementById("current-num-of-gifs").innerHTML = `${numOfGifs}`;
 }
 
 
